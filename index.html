@@ -1,12 +1,74 @@
+You’re not missing it—I incorrectly assumed your interface had a Files panel. Sorry for the confusion. The saved file is internal, and I can’t provide a downloadable attachment from this session.
+
+Here’s the **complete updated HTML**. Copy it into your website’s `index.html`, keeping your existing `styles.css` and logo in place. The Team Photos section and navigation link are already included.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cleveland High School Pickleball Club — play, compete, and represent Cleveland.">
   <title>Cleveland High School Pickleball</title>
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    #team-photos {
+      scroll-margin-top: 100px;
+    }
+
+    .team-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .team-photo-card {
+      margin: 0;
+    }
+
+    .team-photo-card img,
+    .team-photo-placeholder {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+    }
+
+    .team-photo-card img {
+      object-fit: cover;
+    }
+
+    .team-photo-placeholder {
+      display: grid;
+      place-items: center;
+      box-sizing: border-box;
+      padding: 24px;
+      background: #f1f4f7;
+      border: 2px dashed #b9c4cf;
+      color: #475569;
+      text-align: center;
+    }
+
+    .team-photo-card figcaption {
+      margin-top: 14px;
+    }
+
+    .team-photo-card h3 {
+      margin: 0 0 6px;
+    }
+
+    .team-photo-card p {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .team-photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -20,6 +82,7 @@
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#team-photos">Team Photos</a>
         <a href="#schedule">Schedule</a>
         <a href="#competition">Competition</a>
         <a href="#sponsors">Sponsorship</a>
@@ -84,6 +147,56 @@
       </div>
     </section>
 
+    <!-- TEAM PHOTOS -->
+    <section id="team-photos" class="section" aria-labelledby="team-photos-heading">
+      <div class="container">
+        <p class="eyebrow dark">OUR TEAM</p>
+        <h2 id="team-photos-heading">Raider pride in pictures.</h2>
+        <p>Meet the players and catch the moments that bring our club together.</p>
+
+        <div class="team-photo-grid">
+          <figure class="team-photo-card">
+            <!-- When ready, replace the placeholder div with:
+            <img src="images/team.jpg"
+                 alt="Cleveland High School Pickleball Club team"
+                 loading="lazy" width="1200" height="900">
+            -->
+            <div class="team-photo-placeholder">Team photo coming soon</div>
+            <figcaption>
+              <h3>Meet the team</h3>
+              <p>The players behind Cleveland Pickleball.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="team-photo-card">
+            <!-- When ready, replace the placeholder div with:
+            <img src="images/practice.jpg"
+                 alt="Club members practicing pickleball"
+                 loading="lazy" width="1200" height="900">
+            -->
+            <div class="team-photo-placeholder">Practice photo coming soon</div>
+            <figcaption>
+              <h3>On the court</h3>
+              <p>Learning, improving, and having fun together.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="team-photo-card">
+            <!-- When ready, replace the placeholder div with:
+            <img src="images/match-day.jpg"
+                 alt="Cleveland pickleball players on match day"
+                 loading="lazy" width="1200" height="900">
+            -->
+            <div class="team-photo-placeholder">Match-day photo coming soon</div>
+            <figcaption>
+              <h3>Match-day moments</h3>
+              <p>Representing Cleveland with Raider pride.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section id="schedule" class="section dark-section">
       <div class="container">
         <div class="section-heading">
@@ -95,21 +208,24 @@
         <div class="events">
           <div class="event">
             <div class="date"><strong>TUES</strong><span>3:00-4:30</span></div>
-            <div><span class="event-tag">MEETING</span>
+            <div>
+              <span class="event-tag">MEETING</span>
               <h3>Club Practice / Meet-Up</h3>
               <p>Every Tuesday from 3:00-4:30 at Tinsley Park.</p>
             </div>
           </div>
           <div class="event">
             <div class="date"><strong>TBD</strong><span>DATE</span></div>
-            <div><span class="event-tag">COMPETITION</span>
+            <div>
+              <span class="event-tag">COMPETITION</span>
               <h3>District Friendly Matches</h3>
               <p>TBD</p>
             </div>
           </div>
           <div class="event">
             <div class="date"><strong>SPRING</strong><span>3/20/27</span></div>
-            <div><span class="event-tag">COMPETITION</span>
+            <div>
+              <span class="event-tag">COMPETITION</span>
               <h3>Cleveland Classic Doubles Tournament</h3>
               <p>Location and details to be announced.</p>
             </div>
@@ -122,8 +238,7 @@
       <div class="container">
         <p class="eyebrow dark">THE GOAL</p>
         <h2>Bring schools to the court.</h2>
-        <p class="lead">We're working toward organized inter-school pickleball competition in Bradley County and beyond.
-        </p>
+        <p class="lead">We're working toward organized inter-school pickleball competition in Bradley County and beyond.</p>
         <div class="rivals">
           <div class="school"><span>CHS</span><strong>Cleveland</strong><small>RAIDERS</small></div>
           <div class="vs">VS</div>
@@ -141,13 +256,11 @@
         <div>
           <p class="eyebrow">READY TO PLAY?</p>
           <h2>Get involved.</h2>
-          <p>Whether you're brand new to pickleball or already play competitively, start by filling out the interest
-            form.</p>
+          <p>Whether you're brand new to pickleball or already play competitively, start by filling out the interest form.</p>
         </div>
         <div class="join-box">
           <h3>Student Interest Form</h3>
-          <a class="button primary full" href="https://forms.gle/dFQhhtdQfwLwSMa78" target="_blank" rel="noopener">Join the Club
-            →</a>
+          <a class="button primary full" href="https://forms.gle/dFQhhtdQfwLwSMa78" target="_blank" rel="noopener">Join the Club →</a>
         </div>
       </div>
     </section>
@@ -160,7 +273,6 @@
             <h2>Support the club.</h2>
           </div>
         </div>
-
         <div class="sponsor-tier-grid">
           <article class="sponsor-tier">
             <span class="tier-label">TITLE SPONSOR</span>
@@ -170,7 +282,7 @@
           <article class="sponsor-tier">
             <span class="tier-label">PLATINUM</span>
             <h3>$500-$999</h3>
-            <p><p>Includes all Gold benefits, plus large logo placement on official team shirts and merchandise, and a featured sponsor highlight.</p></p>
+            <p>Includes all Gold benefits, plus large logo placement on official team shirts and merchandise, and a featured sponsor highlight.</p>
           </article>
           <article class="sponsor-tier">
             <span class="tier-label">GOLD</span>
@@ -225,29 +337,36 @@
         </div>
       </div>
     </section>
+
     <section id="contact" class="section">
-  <div class="container split">
-    <div>
-      <p class="eyebrow dark">GET IN TOUCH</p>
-      <h2>Contact Us</h2>
-    </div>
-    <div class="section-copy">
-      <p>Have questions about the club, sponsorship opportunities, or upcoming events? Reach out to us anytime!</p>
-      <p>
-        <strong>Email:</strong> 
-        <a href="mailto:egallaher@clevelandschools.org">egallaher@clevelandschools.org</a>
-      </p>
-    </div>
-  </div>
-</section>
+      <div class="container split">
+        <div>
+          <p class="eyebrow dark">GET IN TOUCH</p>
+          <h2>Contact Us</h2>
+        </div>
+        <div class="section-copy">
+          <p>Have questions about the club, sponsorship opportunities, or upcoming events? Reach out to us anytime!</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:egallaher@clevelandschools.org">egallaher@clevelandschools.org</a>
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div><strong>CLEVELAND HIGH SCHOOL PICKLEBALL</strong>
+      <div>
+        <strong>CLEVELAND HIGH SCHOOL PICKLEBALL</strong>
         <p>Play. Compete. Represent.</p>
       </div>
-      <div class="footer-links"><a href="#join">Join</a><a href="#schedule">Schedule</a><a href="#about">About</a></div>
+      <div class="footer-links">
+        <a href="#join">Join</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#team-photos">Team Photos</a>
+        <a href="#about">About</a>
+      </div>
     </div>
     <div class="container copyright">© 2026 Cleveland High School Pickleball Club • Cleveland, Tennessee</div>
   </footer>
@@ -255,12 +374,19 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const links = document.querySelector('.nav-links');
+
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
-    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   </script>
 </body>
-
 </html>
+```
