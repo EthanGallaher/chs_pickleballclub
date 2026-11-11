@@ -784,3 +784,6 @@ details p {
 .hero-text { background:linear-gradient(to bottom,transparent 32%,rgba(0,19,49,.78) 100%); }
 @media(max-width:800px) { .team-photo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:560px) { .team-photo-grid { grid-template-columns:1fr; } .team-photo-card img { height:245px; } }
+.gallery-image.picture4 {
+  object-position: center top;
+}
