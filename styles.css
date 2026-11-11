@@ -787,3 +787,6 @@ details p {
 .gallery-image.picture4 {
   object-position: center top;
 }
+img[src*="picture4.jpeg"] {
+  object-position: center top !important;
+}
