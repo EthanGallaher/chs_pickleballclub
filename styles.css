@@ -788,5 +788,7 @@ details p {
   object-position: center top;
 }
 img[src*="picture4.jpeg"] {
-  object-position: center top !important;
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
 }
